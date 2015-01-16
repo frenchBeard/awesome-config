@@ -52,7 +52,7 @@ require_safe('personal')
 -- }}}
 
 -- {{{ Variable definitions
-local wallpaper_cmd = "find " .. wallpaper_dir .. " -type f -name '*.jpg'  -print0 | shuf -n1 -z | xargs -0 feh --bg-scale"
+local wallpaper_cmd = "find " .. wallpaper_dir .. " -type f -name '*.png'  -print0 | shuf -n1 -z | xargs -0 feh --bg-scale"
 local home   = os.getenv("HOME")
 local exec   = awful.util.spawn
 local sexec  = awful.util.spawn_with_shell
@@ -169,7 +169,7 @@ vicious.register(batwidget, vicious.widgets.bat,
 		if args[2] == 0 then return ""
 		else
 			baticon.image = image(beautiful.widget_bat)
-			return "<span color='white'>".. args[2] .. "%</span>"
+			return "<span color='white'>".. args[3] .. "</span>"
 		end
 	end, 61, "BAT0"
 )
